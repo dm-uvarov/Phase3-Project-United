@@ -1,0 +1,47 @@
+import React from "react";
+import { Button, Form, Grid, Dropdown } from "semantic-ui-react";
+
+const categoryType = [
+  { key: "Sound", value: "Sound", text: "Sound" },
+  { key: "Lighting", value: "Lighting", text: "Lighting" },
+  { key: "Decorations", value: "Decorations", text: "Decorations" },
+  { key: "Furniture ", value: "Furniture", text: "Feating" },
+];
+
+function InventoryForm() {
+  return (
+    <Grid centered={true}>
+      <Grid.Column style={{ width: "30%", margin: "auto" }}>
+        <Form>
+          <Form.Field>
+            <label>Item</label>
+            <input placeholder="Item" />
+          </Form.Field>
+
+          <label
+            style={{
+              fontWeight: "bold",
+              fontFamily: "Lato,Helvetica Neue,Arial,Helvetica,sans-serif",
+              fontSize: ".92857143em",
+            }}
+          >
+            Category Type
+          </label>
+          <Dropdown
+            placeholder="Category"
+            fluid
+            search
+            selection
+            options={categoryType}
+          ></Dropdown>
+
+          <Button style={{ width: "15%", margin: "auto" }} fluid type="submit">
+            Submit
+          </Button>
+        </Form>
+      </Grid.Column>
+    </Grid>
+  );
+}
+
+export default InventoryForm;
