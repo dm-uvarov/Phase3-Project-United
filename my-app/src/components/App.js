@@ -1,11 +1,25 @@
 import "../App.css";
+import { Grid } from "semantic-ui-react";
 import InventoryForm from "./InventoryForm";
+import InventoryList from "./InventoryList";
 
 function App() {
   return (
     <div className="App">
-      <h1>Party Equipment Inventory</h1>
-      <InventoryForm />
+      <Grid centered={true}>
+        <Grid.Row>
+          <Grid.Column width={8}>
+            <h1>Party Equipment Inventory</h1>
+            <InventoryList />
+          </Grid.Column>
+        </Grid.Row>
+
+        <Grid.Row>
+          <Grid.Column width={8}>
+            <InventoryForm />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
     </div>
   );
 }

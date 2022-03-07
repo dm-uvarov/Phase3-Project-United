@@ -5,13 +5,13 @@ const categoryType = [
   { key: "Sound", value: "Sound", text: "Sound" },
   { key: "Lighting", value: "Lighting", text: "Lighting" },
   { key: "Decorations", value: "Decorations", text: "Decorations" },
-  { key: "Furniture ", value: "Furniture", text: "Feating" },
+  { key: "Furniture ", value: "Furniture", text: "Furniture" },
 ];
 
 function InventoryForm() {
   return (
     <Grid centered={true}>
-      <Grid.Column style={{ width: "30%", margin: "auto" }}>
+      <Grid.Column style={{ width: "50%", margin: "auto" }}>
         <Form>
           <Form.Field>
             <label>Item</label>
