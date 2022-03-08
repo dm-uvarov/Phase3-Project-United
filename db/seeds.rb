@@ -15,7 +15,7 @@ Category.create(name: "Clean Up")
          name: equipment_name.sample,
          category_id: Category.all.sample.id,
          img_url: "url"
-         )
+    )
     end
 
 
