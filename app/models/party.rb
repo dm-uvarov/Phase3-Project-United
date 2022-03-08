@@ -5,7 +5,7 @@ end
 
 
 
-#   Equipment ------< category
+#   Equipment >------ category
 #         v
 #         |
 #       events
