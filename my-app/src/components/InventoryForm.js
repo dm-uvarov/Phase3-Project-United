@@ -39,7 +39,7 @@ function InventoryForm() {
             ></Dropdown>
 
             <Button
-              style={{ width: "15%", margin: "auto" }}
+              style={{ width: "15%", margin: "auto", marginTop: "10px" }}
               fluid
               type="submit"
             >
