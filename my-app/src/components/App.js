@@ -2,10 +2,12 @@ import "../App.css";
 import { Grid } from "semantic-ui-react";
 import InventoryForm from "./InventoryForm";
 import InventoryList from "./InventoryList";
+import NavBar from "./NavBar";
 
 function App() {
   return (
     <div className="App">
+      <NavBar />
       <Grid centered={true}>
         <Grid.Row>
           <Grid.Column width={8}>
