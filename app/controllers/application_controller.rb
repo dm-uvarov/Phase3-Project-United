@@ -8,4 +8,10 @@ class ApplicationController < Sinatra::Base
     categories.to_json
   end
 
+  get "/equipment" do
+    equipment = Equipment.all
+    
+    equipment.to_json
+  end
+
 end
