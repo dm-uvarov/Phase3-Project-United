@@ -6,6 +6,8 @@ const categoryType = [
   { key: "Lighting", value: "Lighting", text: "Lighting" },
   { key: "Decorations", value: "Decorations", text: "Decorations" },
   { key: "Furniture ", value: "Furniture", text: "Furniture" },
+  { key: "Games ", value: "Games", text: "Games" },
+  { key: "Clean Up", value: "Clean Up", text: "Clean Up" },
 ];
 
 function InventoryForm() {

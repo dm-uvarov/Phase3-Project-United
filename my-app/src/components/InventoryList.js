@@ -8,7 +8,7 @@ function InventoryList() {
         <Grid.Column>
           <Card
             centered={true}
-            href="#card-example-link-card"
+            href="/sound"
             header="Sound"
             description="View Sound equipment"
           />
