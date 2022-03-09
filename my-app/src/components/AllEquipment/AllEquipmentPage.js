@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Grid } from "semantic-ui-react";
 import AllEquipmentCollection from "./AllEquipmentCollection";
 
-function AllEquipmentPage({ allItems }) {
+function AllEquipmentPage({ allItems, deleteItem }) {
   return (
     <Container>
       <Grid centered={true}>
@@ -12,7 +12,7 @@ function AllEquipmentPage({ allItems }) {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-      <AllEquipmentCollection allItems={allItems} />
+      <AllEquipmentCollection allItems={allItems} deleteItem={deleteItem} />
     </Container>
   );
 }

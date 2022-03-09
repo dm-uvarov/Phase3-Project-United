@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Form, Grid, Dropdown, Segment } from "semantic-ui-react";
 
 const categoryType = [
@@ -11,6 +11,36 @@ const categoryType = [
 ];
 
 function InventoryForm() {
+  const [itemName, setItemName] = useState("");
+  const [image, setImage] = useState("");
+  const [category, setCategory] = useState("");
+
+  const onChange = (event, result) => {
+    const { name, value } = result || event.target;
+    setCategory({ ...category, [name]: value });
+  };
+
+  function handleNewItem(e) {
+    e.preventDefault();
+    // console.log(e);
+    const newItemObj = {
+      name: itemName,
+      img_url: image,
+      category_id: category,
+    };
+    console.log(newItemObj);
+    fetch(`http://localhost:9292/equipment`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newItemObj),
+    });
+    // setItemName("");
+    // setImage("");
+  }
+  console.log(category);
   return (
     <Grid centered={true}>
       <Grid.Row style={{ marginTop: "30px" }}>
@@ -20,10 +50,21 @@ function InventoryForm() {
       </Grid.Row>
       <Grid.Column style={{ width: "30%", margin: "auto", marginTop: "50px" }}>
         <Segment>
-          <Form>
+          <Form onSubmit={handleNewItem}>
             <Form.Field>
               <label>Item</label>
-              <input placeholder="Item" />
+              <input
+                placeholder="Item"
+                onChange={(e) => setItemName(e.target.value)}
+              />
+            </Form.Field>
+
+            <Form.Field>
+              <label>Image URL</label>
+              <input
+                placeholder="Image URL"
+                onChange={(e) => setImage(e.target.value)}
+              />
             </Form.Field>
 
             <label
@@ -41,6 +82,7 @@ function InventoryForm() {
               search
               selection
               options={categoryType}
+              onChange={onChange}
             ></Dropdown>
 
             <Button

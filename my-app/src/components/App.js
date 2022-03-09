@@ -75,6 +75,19 @@ function App() {
       .then((resp) => resp.json())
       .then((cleaningItemArray) => setCleaningItem(cleaningItemArray));
   }, []);
+
+  //Add Item
+  function addItem(newItem) {
+    const updatedItem = [...allItem, newItem];
+    setAllItem(updatedItem);
+  }
+
+  //Delete Item
+  function deleteItem(id) {
+    const updatedItems = allItem.filter((item) => item.id !== id);
+    setAllItem(updatedItems);
+  }
+
   return (
     <div className="App">
       <NavBar />
@@ -85,7 +98,7 @@ function App() {
         </Route>
         {/* All Equipment */}
         <Route exact path="/all-equipment">
-          <AllEquipmentPage allItems={allItem} />
+          <AllEquipmentPage allItems={allItem} deleteItem={deleteItem} />
         </Route>
         {/* Sound Equipment */}
         <Route exact path="/sound">
@@ -112,7 +125,7 @@ function App() {
           <CleaningPage cleaningItems={cleaningItem} />
         </Route>
         <Route exact path="/add-item">
-          <InventoryForm />
+          <InventoryForm addItem={addItem} />
         </Route>
       </Switch>
     </div>
