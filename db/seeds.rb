@@ -153,7 +153,7 @@ end
 50.times do 
     Event.create(
         address:    addresses.sample,
-        eq_id:      Equipment.all.sample.id,   
+        equipment_id:      Equipment.all.sample.id,   
         party_id:   Party.all.sample.id
     )
 end

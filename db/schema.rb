@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2022_03_09_035650) do
 
   create_table "events", force: :cascade do |t|
     t.string "address"
-    t.integer "eq_id"
+    t.integer "equipment_id"
     t.integer "party_id"
   end
 
