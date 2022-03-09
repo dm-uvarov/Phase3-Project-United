@@ -13,7 +13,12 @@ const categoryType = [
 function InventoryForm() {
   return (
     <Grid centered={true}>
-      <Grid.Column style={{ width: "50%", margin: "auto" }}>
+      <Grid.Row style={{ marginTop: "30px" }}>
+        <Grid.Column width={8}>
+          <h1>Add Some Equipment</h1>
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Column style={{ width: "30%", margin: "auto", marginTop: "50px" }}>
         <Segment>
           <Form>
             <Form.Field>

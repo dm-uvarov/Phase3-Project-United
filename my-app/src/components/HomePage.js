@@ -17,12 +17,6 @@ function HomePage() {
           <InventoryList />
         </Grid.Column>
       </Grid.Row>
-
-      <Grid.Row>
-        <Grid.Column width={8}>
-          <InventoryForm />
-        </Grid.Column>
-      </Grid.Row>
     </Grid>
   );
 }

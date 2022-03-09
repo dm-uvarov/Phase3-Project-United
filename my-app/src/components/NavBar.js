@@ -14,21 +14,16 @@ function NavBar() {
           as={Link}
           to="/"
           name="Home"
+          style={{ fontSize: "20px" }}
           active={activeItem === "home"}
           onClick={handleItemClick}
         />
         <Menu.Item
-          //   as={Link}
-          //   to="/characters"
-          name="Lists"
-          active={activeItem === "lists"}
-          onClick={handleItemClick}
-        />
-        <Menu.Item
-          //   as={Link}
-          //   to="/add-character"
-          name="Add Equipment"
-          active={activeItem === "add equipment"}
+          as={Link}
+          to="/add-item"
+          name="Add New Item"
+          style={{ fontSize: "20px" }}
+          active={activeItem === "form"}
           onClick={handleItemClick}
         />
       </Menu>

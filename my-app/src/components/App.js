@@ -4,6 +4,7 @@ import NavBar from "./NavBar";
 import { Switch, Route } from "react-router-dom";
 import SoundEquipment from "./SoundEquipment";
 import HomePage from "./HomePage";
+import InventoryForm from "./InventoryForm";
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
         </Route>
         <Route exact path="/sound">
           <SoundEquipment />
+        </Route>
+        <Route exact path="/add-item">
+          <InventoryForm />
         </Route>
       </Switch>
     </div>
