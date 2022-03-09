@@ -33,7 +33,20 @@ class ApplicationController < Sinatra::Base
     equipment.to_json
   end
 
+  post '/equipment' do
+    # create a new review in the database
+    # params is a hash of key-value pairs coming from the body of the request
+    equipment = Equipment.create(
+      name:         params[:name],
+      img_url:      params[:img_url],
+      category_id:  params[:category_id],
+      in_stock:     params[:in_stock],
+      rent_price:   params[:rent_price]
+    )
 
+    # send back a response with the created review as JSON
+    equipment.to_json
+  end
 
 
 end
