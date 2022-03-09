@@ -1,12 +1,19 @@
 import "../App.css";
-
+import React, { useState, useEffect } from "react";
 import NavBar from "./NavBar";
 import { Switch, Route } from "react-router-dom";
-import SoundEquipment from "./SoundEquipment";
+import SoundPage from "./SoundPage";
 import HomePage from "./HomePage";
 import InventoryForm from "./InventoryForm";
 
 function App() {
+  const [soundItem, setSoundItem] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:9292/categories")
+      .then((resp) => resp.json())
+      .then((soundItemArray) => setSoundItem(soundItemArray));
+  }, []);
   return (
     <div className="App">
       <NavBar />
@@ -16,7 +23,7 @@ function App() {
           <HomePage />
         </Route>
         <Route exact path="/sound">
-          <SoundEquipment />
+          <SoundPage categoryTest={soundItem} />
         </Route>
         <Route exact path="/add-item">
           <InventoryForm />

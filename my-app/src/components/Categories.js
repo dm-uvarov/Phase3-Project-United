@@ -1,9 +1,21 @@
 import React from "react";
 import { Card, Grid } from "semantic-ui-react";
 
-function InventoryList() {
+function Categories() {
   return (
     <Grid columns={3} divided>
+      <Grid.Row>
+        <Grid.Column></Grid.Column>
+        <Grid.Column>
+          <Card
+            centered={true}
+            href="#card-example-link-card"
+            header="All Equipment"
+            description="View All Equipment"
+          />
+        </Grid.Column>
+        <Grid.Column></Grid.Column>
+      </Grid.Row>
       <Grid.Row>
         <Grid.Column>
           <Card
@@ -68,4 +80,4 @@ function InventoryList() {
   );
 }
 
-export default InventoryList;
+export default Categories;

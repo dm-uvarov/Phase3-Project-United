@@ -1,17 +1,20 @@
 import React from "react";
 import { Button, Image, List, Container, Grid } from "semantic-ui-react";
+import SoundCollection from "./SoundCollection";
 
-function SoundEquipment() {
+function SoundPage({ categoryTest }) {
   return (
     <Container>
       <Grid centered={true}>
         <Grid.Row style={{ marginBottom: "50px" }}>
           <Grid.Column width={8}>
-            <h1>Party Equipment Inventory</h1>
+            <h1>Sound Equipment Inventory</h1>
           </Grid.Column>
         </Grid.Row>
       </Grid>
-      <List
+      <SoundCollection categoryTest={categoryTest} />
+
+      {/* <List
         style={{ width: "40%", margin: "auto" }}
         divided
         verticalAlign="middle"
@@ -56,9 +59,9 @@ function SoundEquipment() {
           />
           <List.Content>Molly</List.Content>
         </List.Item>
-      </List>
+      </List> */}
     </Container>
   );
 }
 
-export default SoundEquipment;
+export default SoundPage;

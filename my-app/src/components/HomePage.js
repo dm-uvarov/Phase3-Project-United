@@ -1,7 +1,6 @@
 import React from "react";
 import { Grid } from "semantic-ui-react";
-import InventoryForm from "./InventoryForm";
-import InventoryList from "./InventoryList";
+import Categories from "./Categories";
 
 function HomePage() {
   return (
@@ -14,7 +13,7 @@ function HomePage() {
 
       <Grid.Row style={{ marginTop: "30px", marginBottom: "150px" }}>
         <Grid.Column width={8}>
-          <InventoryList />
+          <Categories />
         </Grid.Column>
       </Grid.Row>
     </Grid>
