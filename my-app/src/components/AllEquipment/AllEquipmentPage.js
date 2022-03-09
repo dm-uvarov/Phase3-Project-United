@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Image, List, Container, Grid } from "semantic-ui-react";
+import { Container, Grid } from "semantic-ui-react";
 import AllEquipmentCollection from "./AllEquipmentCollection";
 
 function AllEquipmentPage({ allItems }) {

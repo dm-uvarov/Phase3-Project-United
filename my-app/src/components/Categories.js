@@ -28,7 +28,7 @@ function Categories() {
         <Grid.Column>
           <Card
             centered={true}
-            href="#card-example-link-card"
+            href="/lighting"
             header="Lighting"
             description="View Lighting equipment"
           />
@@ -36,7 +36,7 @@ function Categories() {
         <Grid.Column>
           <Card
             centered={true}
-            href="#card-example-link-card"
+            href="/Decorations"
             header="Decorations"
             description="View Decorations"
           />
@@ -47,7 +47,7 @@ function Categories() {
         <Grid.Column>
           <Card
             centered={true}
-            href="#card-example-link-card"
+            href="/furniture"
             header="Furniture"
             description="View Furniture"
           />
@@ -55,7 +55,7 @@ function Categories() {
         <Grid.Column>
           <Card
             centered={true}
-            href="#card-example-link-card"
+            href="/games"
             header="Games"
             description="View Game Equipment"
           />
@@ -63,7 +63,7 @@ function Categories() {
         <Grid.Column>
           <Card
             centered={true}
-            href="#card-example-link-card"
+            href="/cleaning"
             header="Clean Up"
             description="View Clean Up supplies"
           />

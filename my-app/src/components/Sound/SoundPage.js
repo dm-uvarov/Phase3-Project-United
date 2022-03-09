@@ -1,8 +1,8 @@
 import React from "react";
-import { Button, Image, List, Container, Grid } from "semantic-ui-react";
+import { Container, Grid } from "semantic-ui-react";
 import SoundCollection from "./SoundCollection";
 
-function SoundPage({ categoryTest }) {
+function SoundPage({ soundItems }) {
   return (
     <Container>
       <Grid centered={true}>
@@ -12,7 +12,7 @@ function SoundPage({ categoryTest }) {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-      <SoundCollection categoryTest={categoryTest} />
+      <SoundCollection soundItems={soundItems} />
     </Container>
   );
 }
