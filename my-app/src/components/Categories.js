@@ -9,7 +9,7 @@ function Categories() {
         <Grid.Column>
           <Card
             centered={true}
-            href="#card-example-link-card"
+            href="/all-equipment"
             header="All Equipment"
             description="View All Equipment"
           />
