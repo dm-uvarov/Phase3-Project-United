@@ -106,5 +106,29 @@ class ApplicationController < Sinatra::Base
     equipment.to_json
   end
 
+  get "/events" do
+    events = Event.all
+    
+    events.to_json
+  end
+
+  
+  get "/parties" do 
+    # binding.pry
+    parties = Party.all
+    parties.to_json
+  end
+
+  get "/parties/:id" do
+    party = Party.find(params[:id])
+    #events = Party.find(params[:id]).events
+    #equipment = Party.find(params[:id]).equipment
+    party.to_json(only: [:id, :opening_date,  :closing_date, :contact, :phone], include: {
+                    events: {only: [:address, :equipment_id]} , equipment: {only: [ :id,:name,:img_url ,:in_stock,:rent_price]} 
+                       } 
+                    #  }
+              )
+  end
+
 
 end
