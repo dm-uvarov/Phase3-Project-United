@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Grid } from "semantic-ui-react";
 import LightingCollection from "./LightingCollection";
 
-function LightingPage({ lightingItems }) {
+function LightingPage({ lightingItems, deleteItem }) {
   return (
     <Container>
       <Grid centered={true}>
@@ -12,7 +12,10 @@ function LightingPage({ lightingItems }) {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-      <LightingCollection lightingItems={lightingItems} />
+      <LightingCollection
+        lightingItems={lightingItems}
+        deleteItem={deleteItem}
+      />
     </Container>
   );
 }

@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Grid } from "semantic-ui-react";
 import DecorationsCollection from "./DecorationsCollection";
 
-function DecorationsPage({ decorationItems }) {
+function DecorationsPage({ decorationItems, deleteItem }) {
   return (
     <Container>
       <Grid centered={true}>
@@ -12,7 +12,10 @@ function DecorationsPage({ decorationItems }) {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-      <DecorationsCollection decorationItems={decorationItems} />
+      <DecorationsCollection
+        decorationItems={decorationItems}
+        deleteItem={deleteItem}
+      />
     </Container>
   );
 }

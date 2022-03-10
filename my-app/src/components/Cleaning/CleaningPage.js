@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Grid } from "semantic-ui-react";
 import CleaningCollection from "./CleaningCollection";
 
-function CleaningPage({ cleaningItems }) {
+function CleaningPage({ cleaningItems, deleteItem }) {
   return (
     <Container>
       <Grid centered={true}>
@@ -12,7 +12,10 @@ function CleaningPage({ cleaningItems }) {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-      <CleaningCollection cleaningItems={cleaningItems} />
+      <CleaningCollection
+        cleaningItems={cleaningItems}
+        deleteItem={deleteItem}
+      />
     </Container>
   );
 }

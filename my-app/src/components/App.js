@@ -71,7 +71,7 @@ function App() {
   const [cleaningItem, setCleaningItem] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:9292/equipment/Clean Up")
+    fetch("http://localhost:9292/equipment/Cleaning")
       .then((resp) => resp.json())
       .then((cleaningItemArray) => setCleaningItem(cleaningItemArray));
   }, []);
@@ -102,27 +102,33 @@ function App() {
         </Route>
         {/* Sound Equipment */}
         <Route exact path="/sound">
-          <SoundPage soundItems={soundItem} />
+          <SoundPage soundItems={soundItem} deleteItem={deleteItem} />
         </Route>
         {/* Lighting Equipment */}
         <Route exact path="/lighting">
-          <LightingPage lightingItems={lightingItem} />
+          <LightingPage lightingItems={lightingItem} deleteItem={deleteItem} />
         </Route>
         {/* Decorations Equipment */}
         <Route exact path="/decorations">
-          <DecorationsPage decorationItems={decorationItem} />
+          <DecorationsPage
+            decorationItems={decorationItem}
+            deleteItem={deleteItem}
+          />
         </Route>
         {/* Furniture Equipment */}
         <Route exact path="/furniture">
-          <FurniturePage furnitureItems={furnitureItem} />
+          <FurniturePage
+            furnitureItems={furnitureItem}
+            deleteItem={deleteItem}
+          />
         </Route>
         {/* Games Equipment */}
         <Route exact path="/games">
-          <GamesPage gameItems={gameItem} />
+          <GamesPage gameItems={gameItem} deleteItem={deleteItem} />
         </Route>
         {/* Cleaning Equipment */}
         <Route exact path="/cleaning">
-          <CleaningPage cleaningItems={cleaningItem} />
+          <CleaningPage cleaningItems={cleaningItem} deleteItem={deleteItem} />
         </Route>
         <Route exact path="/add-item">
           <InventoryForm addItem={addItem} />

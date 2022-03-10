@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Grid } from "semantic-ui-react";
 import FurnitureCollection from "./FurnitureCollection";
 
-function FurniturePage({ furnitureItems }) {
+function FurniturePage({ furnitureItems, deleteItem }) {
   return (
     <Container>
       <Grid centered={true}>
@@ -12,7 +12,10 @@ function FurniturePage({ furnitureItems }) {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-      <FurnitureCollection furnitureItems={furnitureItems} />
+      <FurnitureCollection
+        furnitureItems={furnitureItems}
+        deleteItem={deleteItem}
+      />
     </Container>
   );
 }

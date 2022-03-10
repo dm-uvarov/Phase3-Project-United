@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Grid } from "semantic-ui-react";
 import SoundCollection from "./SoundCollection";
 
-function SoundPage({ soundItems }) {
+function SoundPage({ soundItems, deleteItem }) {
   return (
     <Container>
       <Grid centered={true}>
@@ -12,7 +12,7 @@ function SoundPage({ soundItems }) {
           </Grid.Column>
         </Grid.Row>
       </Grid>
-      <SoundCollection soundItems={soundItems} />
+      <SoundCollection soundItems={soundItems} deleteItem={deleteItem} />
     </Container>
   );
 }
