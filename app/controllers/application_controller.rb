@@ -35,6 +35,10 @@ class ApplicationController < Sinatra::Base
   delete '/equipment/:id' do
     # find the equipment using the ID
     equipment = Equipment.find(params[:id])
+
+    events_to_del = Equipment.find(127).events 
+
+    events_to_del.destroy_all
     # delete the eqipment
     equipment.destroy
     # send a response with the deleted equipment as JSON
