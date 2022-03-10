@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Button, Form, Grid, Dropdown, Segment } from "semantic-ui-react";
 
 const categoryType = [
-  { key: "Sound", value: "Sound", text: "Sound" },
-  { key: "Lighting", value: "Lighting", text: "Lighting" },
-  { key: "Decorations", value: "Decorations", text: "Decorations" },
-  { key: "Furniture ", value: "Furniture", text: "Furniture" },
-  { key: "Games ", value: "Games", text: "Games" },
-  { key: "Clean Up", value: "Clean Up", text: "Clean Up" },
+  { key: "Sound", value: 2, text: "Sound" },
+  { key: "Lighting", value: 1, text: "Lighting" },
+  { key: "Decorations", value: 3, text: "Decorations" },
+  { key: "Furniture ", value: 4, text: "Furniture" },
+  { key: "Games ", value: 5, text: "Games" },
+  { key: "Clean Up", value: 6, text: "Clean Up" },
 ];
 
 function InventoryForm() {
@@ -26,7 +26,7 @@ function InventoryForm() {
     const newItemObj = {
       name: itemName,
       img_url: image,
-      category_id: category,
+      category_id: category.undefined,
     };
     console.log(newItemObj);
     fetch(`http://localhost:9292/equipment`, {
@@ -40,7 +40,7 @@ function InventoryForm() {
     // setItemName("");
     // setImage("");
   }
-  console.log(category);
+  console.log(category.undefined);
   return (
     <Grid centered={true}>
       <Grid.Row style={{ marginTop: "30px" }}>
