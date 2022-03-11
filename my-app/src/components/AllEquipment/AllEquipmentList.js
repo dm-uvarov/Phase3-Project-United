@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Button, Card } from "semantic-ui-react";
+import { Image, Button, Card, Checkbox } from "semantic-ui-react";
 
 function AllEquipmentList({ allItems, deleteItem }) {
   const { name, img_url, id } = allItems;

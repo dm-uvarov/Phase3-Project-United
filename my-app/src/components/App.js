@@ -1,4 +1,5 @@
 import "../App.css";
+import "animate.css";
 import React, { useState, useEffect } from "react";
 import NavBar from "./NavBar";
 import { Switch, Route } from "react-router-dom";

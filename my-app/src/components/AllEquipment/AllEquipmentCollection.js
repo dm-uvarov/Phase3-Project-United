@@ -10,7 +10,7 @@ function AllEquipmentCollection({ allItems, deleteItem }) {
       deleteItem={deleteItem}
     />
   ));
-  return <Card.Group itemsPerRow={4}>{AlllistItem}</Card.Group>;
+  return <Card.Group itemsPerRow={5}>{AlllistItem}</Card.Group>;
 }
 
 export default AllEquipmentCollection;

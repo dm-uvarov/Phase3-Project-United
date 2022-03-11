@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button, Form, Grid, Dropdown, Segment } from "semantic-ui-react";
+import Confetti from "react-confetti";
 
 const categoryType = [
   { key: "Sound", value: 2, text: "Sound" },
@@ -14,6 +15,7 @@ function InventoryForm() {
   const [itemName, setItemName] = useState("");
   const [image, setImage] = useState("");
   const [category, setCategory] = useState("");
+  const [confetti, setConfetti] = useState(false);
 
   const onChange = (event, result) => {
     const { name, value } = result || event.target;
@@ -37,12 +39,18 @@ function InventoryForm() {
       },
       body: JSON.stringify(newItemObj),
     });
-    // setItemName("");
-    // setImage("");
+    setConfetti(!confetti);
   }
   console.log(category.undefined);
+  console.log(confetti);
   return (
     <Grid centered={true}>
+      <Confetti
+        run={confetti}
+        numberOfPieces={"1000"}
+        recycle={false}
+        // tweenDuration={"100000"}
+      />
       <Grid.Row style={{ marginTop: "30px" }}>
         <Grid.Column width={8}>
           <h1>Add Some Equipment</h1>
