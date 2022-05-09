@@ -1,3 +1,5 @@
+# this branh was created in order to merge front-end and back-end parts in one repo
+
 # Phase 3 Project Guidelines
 
 ## Learning Goals
