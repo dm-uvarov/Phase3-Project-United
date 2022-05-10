@@ -1,4 +1,4 @@
-# this branh was created in order to merge front-end and back-end parts in one repo
+# current module contains API for Project 3 
 
 # Phase 3 Project Guidelines
 
