@@ -24,19 +24,11 @@ class ApplicationController < Sinatra::Base
     equipment.to_json
   end
 
-  # fetch("http://localhost:9292/equipment/30" ,{
-  #   method: "DELETE",
-  # })
-  #   .then((r) => r.json())
-  #   .then(console.log);
-
-
-
   delete '/equipment/:id' do
     # find the equipment using the ID
     equipment = Equipment.find(params[:id])
 
-    events_to_del = Equipment.find(127).events 
+    events_to_del = Equipment.find(params[:id]).events 
 
     events_to_del.destroy_all
     # delete the eqipment
@@ -44,24 +36,6 @@ class ApplicationController < Sinatra::Base
     # send a response with the deleted equipment as JSON
     equipment.to_json
   end
-
-
-
-
-  # fetch("http://localhost:9292/equipment", {
-  #   method: "POST",
-  #   headers: {
-  #     "Content-Type": "application/json",
-  #   },
-  #   body: JSON.stringify({
-  #     name: "test",
-  #     img_url: "test-url",
-  #     category_id: 4,
-  #     in_stock: false, rent_price: "99999999.99"
-  #   }),
-  # })
-  #   .then((r) => r.json())
-  #   .then(console.log);
 
 
   post '/equipment' do
@@ -75,7 +49,6 @@ class ApplicationController < Sinatra::Base
       rent_price:   params[:rent_price]
     )
 
-    # send back a response with the created equipment as JSON
     equipment.to_json
   end
 
@@ -83,30 +56,12 @@ class ApplicationController < Sinatra::Base
   patch '/equipment/:id' do
     # find the equipment using the ID
     equipment = Equipment.find(params[:id])
-
-
-
-    # fetch("http://localhost:9292/equipment/31", {
-    #   method: "PATCH",
-    #   headers: {
-    #     "Content-Type": "application/json",
-    #   },
-    #   body: JSON.stringify({
-    #     name: "updated name",
-    #     img_url: "updated url", in_stock: false, rent_price: 1.1
-    #   }),
-    # })
-    #   .then((r) => r.json())
-    #   .then(console.log);
-    # update the equipment in the database
     equipment.update(
       name:         params[:name],
       img_url:      params[:img_url],
       in_stock:     params[:in_stock],
       rent_price:   params[:rent_price]
     )
-
-    # send back the updated equipment as JSON
     equipment.to_json
   end
 
@@ -125,8 +80,6 @@ class ApplicationController < Sinatra::Base
 
   get "/parties/:id" do
     party = Party.find(params[:id])
-    #events = Party.find(params[:id]).events
-    #equipment = Party.find(params[:id]).equipment
     party.to_json(only: [:id, :opening_date,  :closing_date, :contact, :phone], include: {
                     events: {only: [:address, :equipment_id]} , equipment: {only: [ :id,:name,:img_url ,:in_stock,:rent_price]} 
                        } 
